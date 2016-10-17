@@ -1,3 +1,6 @@
+# This is the Chucky application behavior that will serve as the entry point to
+# the entire application. Chucky.fact will interact with the server api and
+# return the fact about Chuck Norris.
 defmodule Chucky do
   use Application
   require Logger
