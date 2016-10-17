@@ -7,6 +7,10 @@ defmodule Chucky do
 
   # Instead of creating an explicit supervisor, we import Supervisor.Spec and
   # use the Supervisor.start_link function directly from the start function.
+  # Notice that we're using type (which is a start_type data type from Erlang).
+  # For non-distributed applications, this will usually be :normal, so we just
+  # ignore it. In this case, we want to case off the type in order to account
+  # for :takeover and :falover scenarios.
   def start(type, _args) do
     import Supervisor.Spec
 
